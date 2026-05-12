@@ -1,73 +1,122 @@
-import { Component, HostListener, AfterViewInit } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrls: ['./app.component.css']
 })
-export class AppComponent implements AfterViewInit {
-  title = 'sayvan';
+export class AppComponent implements OnInit {
   isScrolled = false;
   isMenuOpen = false;
-
+  // activeTab = 'shopping';
+  
   contactData = {
     name: '',
     email: '',
-    service: '',
+    phone: '',
+    time: '',
     message: ''
   };
   
   showErrors = false;
+  formSubmitted = false;
 
-  @HostListener('window:scroll', [])
-  onWindowScroll() {
-    this.isScrolled = window.scrollY > 50;
-    this.revealOnScroll();
+  amenities: any = {
+    grocery: [
+      { name: "Trader Joe's", distance: "5 min walk", desc: "Popular grocery destination with high-quality selections.", icon: "shopping_cart" },
+      { name: "Whole Foods Market", distance: "10 min walk", desc: "Premium organic produce and gourmet ingredients.", icon: "shopping_cart" },
+      { name: "City Point BKLYN", distance: "8-10 min walk", desc: "Retail center with Trader Joe's, Target, DeKalb Market Hall.", icon: "shopping_cart" }
+    ],
+    dining: [
+      { name: "DeKalb Market Hall", distance: "8 min walk", desc: "Showcasing 40 local vendors with diverse cuisines.", icon: "restaurant" },
+      { name: "Junior's Restaurant", distance: "5 min walk", desc: "Famous for legendary cheesecake and comfort food.", icon: "restaurant" },
+      { name: "Shake Shack", distance: "12 min walk", desc: "Spacious venue for delicious burgers and shakes.", icon: "restaurant" }
+    ],
+    transportation: [
+      { name: "Hoyt-Schermerhorn", distance: "4 min walk", desc: "A/C/G subway lines for quick access to Manhattan.", icon: "train" },
+      { name: "DeKalb Ave Station", distance: "7 min walk", desc: "B/Q/R subway lines for Brooklyn and City access.", icon: "train" },
+      { name: "Atlantic Terminal", distance: "15 min walk", desc: "Major transit hub with LIRR and multiple subways.", icon: "train" }
+    ],
+    education: [
+      { name: "LIU Brooklyn", distance: "10 min walk", desc: "Prominent private university with diverse programs.", icon: "school" },
+      { name: "NYU Tandon", distance: "12 min walk", desc: "World-class engineering and technology school.", icon: "school" },
+      { name: "Brooklyn Tech", distance: "15 min walk", desc: "Top-tier specialized public high school.", icon: "school" }
+    ],
+    hospital: [
+      { name: "Brooklyn Hospital", distance: "8 min walk", desc: "Comprehensive medical center serving the community.", icon: "local_hospital" },
+      { name: "CityMD Urgent Care", distance: "5 min walk", desc: "Quick access for non-emergency medical needs.", icon: "local_hospital" }
+    ],
+    parks: [
+      { name: "Fort Greene Park", distance: "12 min walk", desc: "Historic park with tennis courts and weekly markets.", icon: "park" },
+      { name: "Brooklyn Bridge Park", distance: "20 min walk", desc: "Iconic waterfront park with stunning city views.", icon: "park" },
+      { name: "Cadman Plaza", distance: "10 min walk", desc: "Spacious green area perfect for morning walks.", icon: "park" }
+    ]
+  };
+
+  activeTab: string = 'grocery';
+
+  ngOnInit() {
+    this.checkScroll();
+    setTimeout(() => this.initReveal(), 100);
+    this.startAutoScroll();
   }
 
-  ngAfterViewInit() {
-    this.revealOnScroll();
+  startAutoScroll() {
+    setInterval(() => {
+      const slider = document.querySelector('.gallery-slider');
+      if (slider) {
+        const scrollAmount = 570; // item width + gap
+        if (slider.scrollLeft + slider.clientWidth >= slider.scrollWidth) {
+          slider.scrollTo({ left: 0, behavior: 'smooth' });
+        } else {
+          slider.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+        }
+      }
+    }, 4000);
+  }
+
+  @HostListener('window:scroll', [])
+  checkScroll() {
+    this.isScrolled = window.pageYOffset > 50;
+    this.initReveal();
   }
 
   toggleMenu() {
     this.isMenuOpen = !this.isMenuOpen;
   }
 
-  revealOnScroll() {
-    const reveals = document.querySelectorAll('.reveal');
-    for (let i = 0; i < reveals.length; i++) {
-      const windowHeight = window.innerHeight;
-      const elementTop = reveals[i].getBoundingClientRect().top;
-      const elementVisible = 150;
-      if (elementTop < windowHeight - elementVisible) {
-        reveals[i].classList.add('active');
-      }
-    }
+  setActiveTab(tab: string) {
+    this.activeTab = tab;
   }
 
   onSubmit(event: Event) {
     event.preventDefault();
-    this.showErrors = true;
-    
-    if (this.contactData.name && this.contactData.email && this.contactData.message && this.contactData.service) {
-      const subject = encodeURIComponent(`New Inquiry from ${this.contactData.name}`);
-      const body = encodeURIComponent(
-        `Name: ${this.contactData.name}\n` +
-        `Email: ${this.contactData.email}\n` +
-        `Service: ${this.contactData.service}\n\n` +
-        `Message:\n${this.contactData.message}`
-      );
-      
-      window.location.href = `mailto:sreenandannbr@gmail.com?subject=${subject}&body=${body}`;
-      this.showErrors = false; // Reset errors on success
+    if (this.contactData.name && this.contactData.email) {
+      this.formSubmitted = true;
+      console.log('Form Submitted:', this.contactData);
+      setTimeout(() => {
+        this.formSubmitted = false;
+        this.contactData = { name: '', email: '', phone: '', time: '', message: '' };
+        this.showErrors = false;
+      }, 3000);
     } else {
-      console.log('Form is invalid');
+      this.showErrors = true;
     }
   }
-}
 
+  initReveal() {
+    const reveals = document.querySelectorAll('.reveal');
+    reveals.forEach((element: any) => {
+      const windowHeight = window.innerHeight;
+      const revealTop = element.getBoundingClientRect().top;
+      const revealPoint = 100;
+      if (revealTop < windowHeight - revealPoint) {
+        element.classList.add('active');
+      }
+    });
+  }
+}

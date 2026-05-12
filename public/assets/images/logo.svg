@@ -1,0 +1,21 @@
+<svg width="400" height="450" viewBox="0 0 400 450" xmlns="http://www.w3.org/2000/svg">
+  <!-- Logo Icon -->
+  <g transform="translate(100, 50)">
+    <!-- U Shape -->
+    <path d="M40 50 V120 C40 160 120 160 120 120 V80" fill="none" stroke="#4F6753" stroke-width="4" stroke-linecap="round"/>
+    
+    <!-- Arch Shape -->
+    <path d="M80 110 V60 C80 20 160 20 160 60 V110" fill="none" stroke="#4F6753" stroke-width="1" stroke-linecap="round"/>
+    <path d="M80 110 V60 C80 20 160 20 160 60 V110" fill="none" stroke="#4F6753" stroke-width="4" stroke-linecap="round" stroke-opacity="0.8"/>
+
+    <!-- Fill area for the overlapping shapes to match the solid feel -->
+    <path d="M40 50 V120 C40 160 120 160 120 120 V80" fill="none" stroke="#4F6753" stroke-width="12" stroke-linecap="butt" opacity="0.1"/>
+    
+    <!-- The dots and small details -->
+    <circle cx="135" cy="135" r="12" fill="#4F6753" />
+  </g>
+
+  <!-- Typography -->
+  <text x="200" y="320" font-family="Serif, 'Playfair Display'" font-size="64" text-anchor="middle" fill="#333" letter-spacing="4">Sayvan</text>
+  <text x="200" y="370" font-family="Sans-Serif, 'Outfit', 'Inter'" font-size="24" text-anchor="middle" fill="#666" letter-spacing="8" font-weight="300">architecture</text>
+</svg>

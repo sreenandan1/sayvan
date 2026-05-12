@@ -1,254 +1,351 @@
 <nav class="navbar" [class.scrolled]="isScrolled">
   <div class="container nav-content">
     <div class="logo">
-      <span class="brand-name">Sayvan</span>
-      <span class="brand-sub">architecture</span>
+      <img src="/assets/images/logo.svg" alt="Sayvan Architecture" class="logo-img">
     </div>
-    <ul class="nav-links">
+    <ul class="nav-links" [class.active]="isMenuOpen">
       <li><a href="#hero">Home</a></li>
-      <li><a href="#about">Philosophy</a></li>
-      <li><a href="#portfolio">Works</a></li>
-      <li><a href="#services">Services</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#facilities">Gallery</a></li>
+      <li><a href="#amenities">News</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
     <div class="nav-cta">
-      <a href="#contact" class="btn btn-outline">Start a Project</a>
+      <a href="#contact" class="btn btn-primary">Schedule Visit</a>
     </div>
-    <div class="menu-toggle" (click)="toggleMenu()">
+    <div class="menu-toggle" (click)="toggleMenu()" [class.active]="isMenuOpen">
+      <span></span>
       <span></span>
       <span></span>
     </div>
   </div>
 </nav>
 
-<div class="mobile-menu" [class.active]="isMenuOpen">
-  <ul>
-    <li><a href="#hero" (click)="toggleMenu()">Home</a></li>
-    <li><a href="#about" (click)="toggleMenu()">Philosophy</a></li>
-    <li><a href="#portfolio" (click)="toggleMenu()">Works</a></li>
-    <li><a href="#services" (click)="toggleMenu()">Services</a></li>
-    <li><a href="#contact" (click)="toggleMenu()">Contact</a></li>
-  </ul>
-</div>
-
 <header id="hero" class="hero">
-  <div class="hero-bg">
-    <img src="assets/images/hero.png" alt="Sayvan Architecture Hero">
-  </div>
-  <div class="hero-overlay"></div>
+  <div class="hero-watermark">FOR SALE</div>
+
   <div class="container hero-content">
-    <div class="hero-text-wrapper">
-      <h4 class="hero-subtitle reveal">Established 2014</h4>
-      <h1 class="hero-title reveal">We Shape <br><span>Space & Time</span></h1>
-      <p class="hero-desc reveal">Minimalist architectural solutions that bridge the gap between contemporary design and timeless elegance.</p>
-      <div class="hero-actions reveal">
-        <a href="#portfolio" class="btn btn-primary">View Portfolio</a>
-        <a href="#about" class="btn btn-outline-white">Our Vision</a>
+    <div class="hero-main-text">
+      <h1 class="reveal">Your Next Perfect and <br>Beautiful Home for <br>Living Today</h1>
+      <p class="hero-location reveal">742 Evergreen Terrace, Brooklyn, NY 11201</p>
+    </div>
+
+
+    <div class="dream-card reveal">
+      <div class="dream-img">
+        <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&q=80&w=600" alt="Live Your Dream">
+      </div>
+      <div class="dream-content">
+        <h4>Live Your Dream</h4>
+        <p>Thoughtfully designed homes that look great, perform well, and fit your lifestyle perfectly, every day.</p>
+        <button class="btn btn-accent btn-sm">Schedule Visit</button>
       </div>
     </div>
-  </div>
-  <div class="scroll-indicator">
-    <div class="mouse"></div>
-    <span>Scroll</span>
   </div>
 </header>
 
-<section id="about" class="about reveal-section">
-  <div class="container about-grid">
-    <div class="about-image reveal">
-      <img src="assets/images/detail.png" alt="Architectural Detail">
-      <div class="image-accent"></div>
-    </div>
-    <div class="about-text reveal">
-      <h4 class="section-tag">Philosophy</h4>
-      <h2 class="section-title">Design is the silent <br>ambassador of your brand.</h2>
-      <p>At Sayvan Architecture, we believe that space is more than just dimensions. It is an experience, a memory, and a statement of identity. Our approach is rooted in the principles of honesty, functionality, and aesthetic purity.</p>
-      <p>Every line we draw and every material we select is a conscious decision to create harmony between the built environment and the soul of its occupants.</p>
-      <div class="stats">
-        <div class="stat-item">
-          <span class="stat-num">120+</span>
-          <span class="stat-label">Projects</span>
-        </div>
-        <div class="stat-item">
-          <span class="stat-num">15</span>
-          <span class="stat-label">Awards</span>
-        </div>
-        <div class="stat-item">
-          <span class="stat-num">08</span>
-          <span class="stat-label">Countries</span>
+<section id="about" class="about-property section-padding">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-label reveal">
+        <span>About Property</span>
+      </div>
+      <div class="about-text reveal">
+        <p>This exceptional residence offers refined living with generous open spaces, bright interiors, and a warm modern design that blends comfort with style. Every room is crafted to create a welcoming atmosphere, giving you the perfect setting for daily life, relaxation, and memorable moments.</p>
+        
+        <div class="property-stats">
+          <div class="stat-item">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M3 3h18v18H3zM9 3v18M3 9h18" />
+            </svg>
+            <span>845 sqft</span>
+          </div>
+          <div class="stat-item">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M3 7h18M3 17h18M3 7v10M21 7v10" />
+            </svg>
+            <span>2 Beds</span>
+          </div>
+          <div class="stat-item">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M4 4h16v12H4zM4 16c0 2 2 4 4 4h8c2 0 4-2 4-4" />
+            </svg>
+            <span>2 Baths</span>
+          </div>
+          <div class="stat-item">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M5 18V6a2 2 0 012-2h10a2 2 0 012 2v12M2 18h20" />
+            </svg>
+            <span>2 Cars</span>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<section id="portfolio" class="portfolio">
+<section id="facilities" class="facilities section-padding">
   <div class="container">
-    <div class="portfolio-header reveal">
-      <div>
-        <h4 class="section-tag">Featured Works</h4>
-        <h2 class="section-title">Selected Projects</h2>
+    <div class="section-header reveal">
+      <span class="subtitle">LUXURY FEATURES</span>
+      <h2 class="section-title">Facilities For Lifestyle</h2>
+    </div>
+
+    <div class="facilities-grid">
+      <!-- Top Row: Image then Text -->
+      <div class="facility-card reveal">
+        <div class="facility-img">
+          <img src="/assets/images/facility_smart.png" alt="Smart Home">
+        </div>
+        <div class="facility-content">
+          <h3>Smart Home</h3>
+          <p>Experience seamless daily comfort with intuitive smart features that connect your home effortlessly and enhance modern living.</p>
+        </div>
       </div>
-      <a href="#" class="view-all">All Projects →</a>
+
+      <div class="facility-card reveal">
+        <div class="facility-img">
+          <img src="https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?auto=format&fit=crop&q=80&w=800" alt="Solar Powered">
+        </div>
+        <div class="facility-content">
+          <h3>Solar Powered</h3>
+          <p>Generate clean renewable energy with efficient solar systems designed to lower utility costs while supporting a greener lifestyle.</p>
+        </div>
+      </div>
+
+      <!-- Bottom Row: Text then Image (Reverse) -->
+      <div class="facility-card reverse reveal">
+        <div class="facility-content">
+          <h3>Swimming Pool</h3>
+          <p>Relax in a beautifully designed private pool that offers a refreshing retreat, peaceful ambiance, and the perfect space for leisure at home.</p>
+        </div>
+        <div class="facility-img">
+          <img src="https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?auto=format&fit=crop&q=80&w=800" alt="Swimming Pool">
+        </div>
+      </div>
+
+      <div class="facility-card reverse reveal">
+        <div class="facility-content">
+          <h3>Home Security</h3>
+          <p>Protect your home with advanced security features that offer continuous monitoring, smart alerts, and peace of mind every day.</p>
+        </div>
+        <div class="facility-img">
+          <img src="https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&q=80&w=800" alt="Home Security">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="tour-section reveal">
+  <div class="container">
+    <div class="tour-container">
+      <img src="/assets/images/urban.png" alt="Luxury Home Tour">
+      <div class="play-btn">
+        <div class="play-icon"></div>
+      </div>
+      <div class="tour-watermark">TOUR</div>
+    </div>
+  </div>
+</section>
+
+<section class="floorplans section-padding">
+  <div class="container">
+    <div class="floorplan-grid">
+      <div class="floorplan-info reveal">
+        <span class="subtitle">Discover</span>
+        <h2 class="section-title">Home Floorplans</h2>
+        
+        <div class="floor-toggle">
+          <button class="floor-btn active">Floor 1</button>
+          <button class="floor-btn">Floor 2</button>
+        </div>
+        
+        <ul class="area-list">
+          <li><span>Living Room</span> <span>22 m²</span></li>
+          <li><span>Dining Room</span> <span>15 m²</span></li>
+          <li><span>Kitchen</span> <span>12 m²</span></li>
+          <li><span>Master Bedroom</span> <span>18 m²</span></li>
+          <li><span>Kid Bedroom</span> <span>12 m²</span></li>
+          <li><span>Bath Room</span> <span>6 m²</span></li>
+          <li><span>Store Room</span> <span>4 m²</span></li>
+          <li><span>Balcony</span> <span>10 m²</span></li>
+          <li><span>Garage/Park</span> <span>15 m²</span></li>
+          <li><span>Warehouse</span> <span>4 m²</span></li>
+          <li><span>Workhouse</span> <span>8 m²</span></li>
+        </ul>
+      </div>
+      <div class="floorplan-viz reveal">
+        <div class="floorplan-placeholder">
+          <div class="floorplan-overlay"></div>
+          <svg viewBox="0 0 500 500" class="floorplan-svg">
+            <!-- Exterior Walls -->
+            <path d="M50 50 h400 v400 h-400 z" fill="none" stroke="white" stroke-width="1" />
+            <!-- Interior Walls -->
+            <path d="M50 200 h150 v100 h-150 M200 50 v300 M200 150 h250 M350 150 v150 M50 350 h150 M200 350 h150 v100" fill="none" stroke="white" stroke-width="1" />
+            <!-- Doors -->
+            <path d="M200 80 l-20 -20 M200 250 l20 20 M350 180 l20 -20" fill="none" stroke="white" stroke-width="0.5" stroke-dasharray="2,2" />
+            <!-- Furniture placeholders -->
+            <rect x="70" y="70" width="60" height="40" fill="none" stroke="white" stroke-width="0.5" opacity="0.5" />
+            <rect x="380" y="380" width="40" height="40" fill="none" stroke="white" stroke-width="0.5" opacity="0.5" />
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="gallery section-padding">
+  <div class="container">
+    <div class="gallery-header reveal">
+      <div class="header-text">
+        <span class="subtitle">Home Gallery</span>
+        <h2 class="section-title">Designed for Living</h2>
+      </div>
+      <div class="gallery-nav">
+        <button class="nav-btn prev">←</button>
+        <button class="nav-btn next">→</button>
+      </div>
     </div>
     
-    <div class="portfolio-grid">
-      <div class="portfolio-item large reveal">
-        <div class="portfolio-img">
-          <img src="assets/images/urban.png" alt="Urban Project">
-          <div class="portfolio-info">
-            <h3>Vertical Horizon</h3>
-            <span>Urban Planning, 2024</span>
-          </div>
-        </div>
+    <div class="gallery-slider reveal">
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&q=80&w=800" alt="Interior View 1">
       </div>
-      <div class="portfolio-item reveal">
-        <div class="portfolio-img">
-          <img src="assets/images/interior.png" alt="Interior Project">
-          <div class="portfolio-info">
-            <h3>Zenith Sanctuary</h3>
-            <span>Interior Design, 2023</span>
-          </div>
-        </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&q=80&w=800" alt="Interior View 2">
       </div>
-      <div class="portfolio-item reveal">
-        <div class="portfolio-img">
-          <img src="assets/images/hero.png" alt="Villa Project">
-          <div class="portfolio-info">
-            <h3>Lumina Villa</h3>
-            <span>Residential, 2023</span>
-          </div>
-        </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&q=80&w=800" alt="Interior View 3">
       </div>
     </div>
   </div>
 </section>
 
-<section id="services" class="services">
+<section id="amenities" class="amenities section-padding">
   <div class="container">
-    <div class="services-intro reveal">
-      <h4 class="section-tag">What we do</h4>
-      <h2 class="section-title">Excellence in every scale.</h2>
+    <div class="amenities-header reveal">
+      <span class="subtitle">Location Highlights</span>
+      <h2 class="section-title">Everything You Need, All Around You</h2>
     </div>
-    
-    <div class="services-grid">
-      <div class="service-card reveal">
-        <div class="service-icon">
-          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
-            <rect x="3" y="3" width="18" height="18" rx="2" />
-            <path d="M3 9h18M9 21V9" />
+
+    <div class="amenities-tabs reveal">
+      <button *ngFor="let tab of ['grocery', 'dining', 'transportation', 'education', 'hospital', 'parks']" 
+              (click)="setActiveTab(tab)"
+              [class.active]="activeTab === tab"
+              class="tab-btn">
+        {{ tab | titlecase }}
+      </button>
+    </div>
+
+    <div class="amenities-list reveal">
+      <div class="amenity-item" *ngFor="let item of amenities[activeTab]">
+        <div class="amenity-icon">
+          <!-- Shopping cart icon for grocery as in image -->
+          <svg *ngIf="activeTab === 'grocery'" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M9 20a1 1 0 100 2 1 1 0 000-2zM20 20a1 1 0 100 2 1 1 0 000-2zM1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 002-1.61L23 6H6" />
+          </svg>
+          <!-- Other icons -->
+          <svg *ngIf="activeTab !== 'grocery'" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10" />
+            <path d="M12 8v4l3 3" />
           </svg>
         </div>
-        <h3>Architectural Design</h3>
-        <p>Crafting unique structures that respond to their context and serve their purpose with elegance.</p>
-      </div>
-      <div class="service-card reveal">
-        <div class="service-icon">
-          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
-            <path d="M12 3v18M3 12h18" />
-            <path d="M5 5l14 14M19 5L5 14" />
-          </svg>
+        <div class="amenity-content">
+          <h3>{{ item.name }}</h3>
+          <span class="distance">{{ item.distance }}</span>
+          <p>{{ item.desc }}</p>
         </div>
-        <h3>Urban Planning</h3>
-        <p>Creating sustainable and livable urban environments that foster community and growth.</p>
-      </div>
-      <div class="service-card reveal">
-        <div class="service-icon">
-          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
-            <path d="M20 7h-9m0 0l-2-2m2 2l-2 2M4 17h16" />
-          </svg>
-        </div>
-        <h3>Interior Design</h3>
-        <p>Bespoke interior solutions that combine functionality with a high level of aesthetic detail.</p>
       </div>
     </div>
   </div>
 </section>
 
-<section id="contact" class="contact">
-  <div class="container contact-grid">
-    <div class="contact-info reveal">
-      <h4 class="section-tag">Get in touch</h4>
-      <h2 class="section-title">Let's build your <br>vision together.</h2>
-      <div class="contact-details">
-        <div class="detail-item">
-          <span>Address</span>
-          <p>123 Architectural Way, <br>Design District, NY 10001</p>
-        </div>
-        <div class="detail-item">
-          <span>Email</span>
-          <p>hellosayvan.arch</p>
-        </div>
-        <div class="detail-item">
-          <span>Phone</span>
-          <p>+1 (555) 000-arch</p>
+<section id="contact" class="booking section-padding">
+  <div class="container">
+    <div class="booking-grid">
+      <div class="booking-info reveal">
+        <span class="subtitle">Schedule Visit</span>
+        <h2 class="section-title">Schedule a Home Tour</h2>
+        <p>Interested in this property or want to see it in person? Send us your inquiry and we'll arrange a tour at your convenience.</p>
+        
+        <div class="agent-profile">
+          <img src="/assets/images/agent.png" alt="Emily Rodriguez">
+          <div class="profile-info">
+            <h3>Emily Rodriguez</h3>
+            <p>+1 (555) 123-4567</p>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="contact-form-wrapper reveal">
-      <form class="contact-form" (submit)="onSubmit($event)">
-        <div class="form-group" [class.has-error]="showErrors && !contactData.name">
-          <input type="text" name="name" [(ngModel)]="contactData.name" placeholder="Full Name" required>
-          <span class="error-msg" *ngIf="showErrors && !contactData.name">Name is required</span>
-        </div>
-        <div class="form-group" [class.has-error]="showErrors && !contactData.email">
-          <input type="email" name="email" [(ngModel)]="contactData.email" placeholder="Email Address" required>
-          <span class="error-msg" *ngIf="showErrors && !contactData.email">Valid email is required</span>
-        </div>
-        <div class="form-group" [class.has-error]="showErrors && !contactData.service">
-          <select name="service" [(ngModel)]="contactData.service" required>
-            <option value="" disabled selected>Select Service</option>
-            <option value="Architectural Design">Architectural Design</option>
-            <option value="Interior Design">Interior Design</option>
-            <option value="Urban Planning">Urban Planning</option>
-          </select>
-          <span class="error-msg" *ngIf="showErrors && !contactData.service">Please select a service</span>
-        </div>
-        <div class="form-group" [class.has-error]="showErrors && !contactData.message">
-          <textarea name="message" rows="5" [(ngModel)]="contactData.message" placeholder="Project Description" required></textarea>
-          <span class="error-msg" *ngIf="showErrors && !contactData.message">Message cannot be empty</span>
-        </div>
-        <button type="submit" class="btn btn-primary">Send Inquiry</button>
-      </form>
+
+      <div class="booking-form-wrapper reveal">
+        <form (submit)="onSubmit($event)" class="booking-form">
+          <div class="form-row">
+            <input type="text" placeholder="First Name" [(ngModel)]="contactData.name" name="name" required>
+            <input type="email" placeholder="Email Address" [(ngModel)]="contactData.email" name="email" required>
+          </div>
+          <div class="form-row">
+            <input type="tel" placeholder="Phone Number" [(ngModel)]="contactData.phone" name="phone">
+            <input type="text" placeholder="Preferred Time" [(ngModel)]="contactData.time" name="time">
+          </div>
+          <textarea placeholder="Message" rows="4" [(ngModel)]="contactData.message" name="message"></textarea>
+          
+          <button type="submit" class="btn btn-primary">Request Tour</button>
+          
+          <p class="success-msg" *ngIf="formSubmitted">Tour request sent successfully!</p>
+          <p class="error-msg" *ngIf="showErrors">Please fill in the required fields.</p>
+        </form>
+      </div>
     </div>
   </div>
 </section>
+
+<div class="marquee-container">
+  <div class="marquee">
+    <span>Modern Living Spaces</span>
+    <span class="dot">•</span>
+    <span>Premium Crafted</span>
+    <span class="dot">•</span>
+    <span>Finishes Sunlit Corner</span>
+    <span class="dot">•</span>
+    <span>Rooms Exclusive</span>
+    <span class="dot">•</span>
+    <span>Modern Living Spaces</span>
+    <span class="dot">•</span>
+    <span>Premium Crafted</span>
+    <span class="dot">•</span>
+  </div>
+</div>
 
 <footer class="footer">
   <div class="container footer-content">
     <div class="footer-brand">
-      <span class="brand-name">Sayvan</span>
-      <p>Redefining architectural excellence since 2014.</p>
-    </div>
-    <div class="footer-links">
-      <div class="link-group">
-        <h4>Studio</h4>
-        <ul>
-          <li><a href="#about">About</a></li>
-          <li><a href="#portfolio">Work</a></li>
-          <li><a href="#services">Services</a></li>
-        </ul>
+      <img src="/assets/images/logo.svg" alt="Sayvan Architecture" class="logo-img footer-logo">
+      <div class="social-links">
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-facebook"></i></a>
       </div>
-      <div class="link-group">
-        <h4>Social</h4>
-        <ul>
-          <li><a href="#">Instagram</a></li>
-          <li><a href="#">LinkedIn</a></li>
-          <li><a href="#">Behance</a></li>
-        </ul>
+    </div>
+    
+    <div class="footer-links">
+      <div class="link-col">
+        <h4>ABOUT US</h4>
+        <a href="#">Our Story</a>
+        <a href="#">Property Status</a>
+        <a href="#">Privacy Policy</a>
+      </div>
+      <div class="link-col">
+        <h4>CONTACT US</h4>
+        <p>732 Designer Avenue, <br>Brooklyn, NY 11201</p>
+        <p>+1 (555) 123-4567</p>
+        <p>hellohomely.com</p>
       </div>
     </div>
   </div>
-  <div class="container footer-bottom">
-    <p>&copy; 2024 Sayvan Architecture. All rights reserved.</p>
-    <p>Designed with Passion.</p>
+  <div class="footer-bottom">
+    <div class="container">
+      <p>Copyright 2024 Homely by Earthmade</p>
+    </div>
   </div>
 </footer>
-
-<!-- Sticky WhatsApp Button -->
-<a href="https://wa.me/8078367668" target="_blank" class="whatsapp-sticky" aria-label="Chat on WhatsApp">
-  <div class="whatsapp-tooltip">Chat with us</div>
-  <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor">
-    <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.284l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766 0-3.18-2.587-5.768-5.764-5.768zm3.393 8.221c-.146.411-.849.752-1.161.796-.312.043-.703.063-1.144-.078-.291-.093-.666-.217-1.14-.424-2.012-.881-3.313-2.92-3.413-3.053-.101-.133-.746-.993-.746-1.894 0-.901.474-1.344.642-1.527.168-.182.366-.228.489-.228.122 0 .245.001.351.006.114.005.267-.043.418.322.155.375.531 1.293.577 1.385.046.091.076.198.015.32-.061.121-.091.198-.182.304-.091.107-.191.238-.273.32-.091.107-.187.223-.08.406.107.182.476.786.974 1.234.642.578 1.182.758 1.35.842.168.084.267.071.366-.043.1-.114.426-.496.54-.665.114-.168.228-.142.381-.087.152.056.966.455 1.134.54.168.084.279.126.32.197.04.071.04.411-.106.822zM12 2C6.477 2 2 6.477 2 12c0 1.891.526 3.659 1.439 5.166L2 22l4.986-1.31A9.944 9.944 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18a7.943 7.943 0 01-4.116-1.145l-.295-.174-3.056.804.819-2.993-.191-.305A7.95 7.95 0 014 12c0-4.411 3.589-8 8-8s8 3.589 8 8-3.589 8-8 8z"/>
-  </svg>
-</a>
