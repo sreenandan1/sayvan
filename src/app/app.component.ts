@@ -59,6 +59,27 @@ export class AppComponent implements OnInit {
 
   activeTab: string = 'grocery';
 
+  team = [
+    {
+      name: 'Alexander Thorne',
+      role: 'Principal Architect',
+      image: 'https://images.unsplash.com/photo-1600880210119-75ee99bb4823?auto=format&fit=crop&q=80&w=600',
+      desc: 'With over 15 years of experience, Alexander leads our architectural vision with a focus on sustainable luxury.'
+    },
+    {
+      name: 'Sophia Chen',
+      role: 'Lead Interior Designer',
+      image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=600',
+      desc: 'Sophia specializes in creating harmonious indoor environments that blend functionality with timeless aesthetics.'
+    },
+    {
+      name: 'Marcus Vane',
+      role: 'Structural Engineer',
+      image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=600',
+      desc: 'Marcus ensures every structure we build is not only beautiful but engineered to the highest standards of safety.'
+    }
+  ];
+
   ngOnInit() {
     this.checkScroll();
     setTimeout(() => this.initReveal(), 100);

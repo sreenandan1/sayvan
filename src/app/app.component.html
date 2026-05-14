@@ -38,7 +38,7 @@
       <div class="dream-content">
         <h4>Live Your Dream</h4>
         <p>Thoughtfully designed homes that look great, perform well, and fit your lifestyle perfectly, every day.</p>
-        <button class="btn btn-accent btn-sm">Schedule Visit</button>
+        <a href="#contact" class="btn btn-accent btn-sm">Schedule Visit</a>
       </div>
     </div>
   </div>
@@ -83,6 +83,35 @@
     </div>
   </div>
 </section>
+ 
+ <section class="team-section section-padding">
+   <div class="container">
+     <div class="section-header reveal text-center">
+       <span class="subtitle">MEET OUR EXPERTS</span>
+       <h2 class="section-title">The Minds Behind Sayvan</h2>
+     </div>
+ 
+     <div class="team-grid">
+       <div class="team-card reveal" *ngFor="let member of team">
+         <div class="team-image">
+           <img [src]="member.image" [alt]="member.name">
+           <div class="team-overlay">
+             <div class="social-mini">
+               <a href="#"><i class="fab fa-linkedin-in"></i></a>
+               <a href="#"><i class="fab fa-twitter"></i></a>
+             </div>
+           </div>
+         </div>
+         <div class="team-info">
+           <h3>{{ member.name }}</h3>
+           <span class="role">{{ member.role }}</span>
+           <p>{{ member.desc }}</p>
+         </div>
+       </div>
+     </div>
+   </div>
+ </section>
+
 
 <section id="facilities" class="facilities section-padding">
   <div class="container">
@@ -349,3 +378,13 @@
     </div>
   </div>
 </footer>
+ 
+ <div class="floating-cta">
+   <a href="https://wa.me/918078367668" target="_blank" class="cta-icon whatsapp" title="Chat on WhatsApp">
+     <i class="fab fa-whatsapp"></i>
+   </a>
+   <a href="https://www.instagram.com/sayvan_architecture?igsh=MWkwdWoyMXR5ZDkwZQ==" target="_blank" class="cta-icon instagram" title="Follow on Instagram">
+     <i class="fab fa-instagram"></i>
+   </a>
+ </div>
+
