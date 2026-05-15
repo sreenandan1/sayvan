@@ -366,7 +366,7 @@
 .floorplans {
   background-color: var(--primary-green);
   color: var(--bg-white);
-  padding: 60px 0;
+  padding: 20px 0;
 }
 
 .floorplans .section-title {
@@ -405,22 +405,25 @@
 }
 
 .area-list {
-  margin-top: 40px;
+  margin-top: 15px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 20px;
 }
 
 .area-list li {
   display: flex;
   justify-content: space-between;
-  padding: 10px 0;
+  padding: 5px 0;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  font-size: 15px;
+  font-size: 11px;
   opacity: 0.8;
 }
 
 .floorplan-viz {
   background: #002216; /* Extra dark green for the plan area */
   border-radius: 30px;
-  height: 400px;
+  height: 180px;
   display: flex;
   align-items: center;
   justify-content: center;
