@@ -63,7 +63,7 @@ export class AppComponent implements OnInit {
     {
       name: 'Alexander Thorne',
       role: 'Principal Architect',
-      image: 'https://images.unsplash.com/photo-1600880210119-75ee99bb4823?auto=format&fit=crop&q=80&w=600',
+      image: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=600',
       desc: 'With over 15 years of experience, Alexander leads our architectural vision with a focus on sustainable luxury.'
     },
     {
@@ -75,7 +75,7 @@ export class AppComponent implements OnInit {
     {
       name: 'Marcus Vane',
       role: 'Structural Engineer',
-      image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=600',
+      image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=600',
       desc: 'Marcus ensures every structure we build is not only beautiful but engineered to the highest standards of safety.'
     }
   ];
